@@ -4,6 +4,7 @@ package Views;
 import Controllers.LoginControllers;
 import Models.UsuarioDao;
 import Models.Usuarios;
+import java.awt.Toolkit;
 
 
 public class FrmLogin extends javax.swing.JFrame {
@@ -14,6 +15,7 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         LoginControllers users = new LoginControllers(us, usDao, this);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Img/precio.png")));
     }
 
     

@@ -5,11 +5,9 @@ import Models.Conexion;
 import Models.Productos;
 import Models.ProductoDao;
 import Models.Tables;
-import com.sun.jdi.connect.spi.Connection;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.PrintJob;
 import java.awt.Toolkit;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -21,8 +19,6 @@ import java.sql.ResultSet;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -41,6 +37,7 @@ public class Print extends javax.swing.JFrame implements Printable {
     DefaultTableModel modelo = new DefaultTableModel();
     public Print(int id) {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Img/precio.png")));
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         
         Calendar fecha = new GregorianCalendar();
@@ -285,6 +282,9 @@ public class Print extends javax.swing.JFrame implements Printable {
         jLabel10.setText("Total a Pagar:");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, -1, -1));
 
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
+
         jTableFact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTableFact.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -304,6 +304,8 @@ public class Print extends javax.swing.JFrame implements Printable {
         });
         jTableFact.setGridColor(new java.awt.Color(255, 255, 255));
         jTableFact.setSelectionBackground(new java.awt.Color(255, 255, 255));
+        jTableFact.setBackground(new java.awt.Color(255, 255, 255));
+        jTableFact.setShowGrid(false);
         jScrollPane2.setViewportView(jTableFact);
         if (jTableFact.getColumnModel().getColumnCount() > 0) {
             jTableFact.getColumnModel().getColumn(0).setMaxWidth(60);

@@ -10,6 +10,7 @@ import Models.ProductoDao;
 import Models.Productos;
 import Models.UsuarioDao;
 import Models.Usuarios;
+import java.awt.Toolkit;
 
 
 public class PanelAdmin extends javax.swing.JFrame {
@@ -26,6 +27,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         ConfigControllers config = new ConfigControllers(this);
         ClientesControllers cliente = new ClientesControllers(cl, clDao, this);
         ProductosControllers productos = new ProductosControllers(pro, proDao, this);
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Img/precio.png")));
     }
 
     /**
@@ -286,7 +288,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel8.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 269, -1, -1));
 
         txtIdProd.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
-        jPanel8.add(txtIdProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 24, 40, 20));
+        jPanel8.add(txtIdProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 24, 40, -1));
 
         btnLimpiarProd.setText("Limpiar");
         jPanel8.add(btnLimpiarProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 325, -1, 18));
@@ -382,6 +384,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         btnGenerarNV.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         btnGenerarNV.setText("Generar Venta");
+        // btnGenerarNV.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         btnGenerarNVActionPerformed(evt);
+        //     }
+        // });
         jPanel6.add(btnGenerarNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, -1, -1));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
@@ -395,7 +402,7 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         txtDescuento.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         txtDescuento.setText("0");
-        jPanel6.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 70, 20));
+        jPanel6.add(txtDescuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 70, -1));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel19.setText("Total");

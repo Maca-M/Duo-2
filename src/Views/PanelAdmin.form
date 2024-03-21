@@ -677,7 +677,7 @@
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="11" y="24" width="40" height="20"/>
+                      <AbsoluteConstraints x="11" y="24" width="40" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1039,6 +1039,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Generar Venta"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGenerarNVActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
@@ -1095,7 +1098,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="380" y="510" width="70" height="20"/>
+                  <AbsoluteConstraints x="380" y="510" width="70" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

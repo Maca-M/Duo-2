@@ -84,7 +84,7 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
                 pro.setPrecio_compra(Double.parseDouble(views.txtCompraProd.getText()));
                 pro.setPrecio_venta(Double.parseDouble(views.txtVentaProd.getText()));
                 if (proDao.registrar(pro)) {
-                    limpiarTable();
+                    // limpiarTable();
                     listarProductos();
                     limpiar();
                     JOptionPane.showMessageDialog(null, "Producto registrado");
@@ -110,7 +110,7 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
                     pro.setPrecio_venta(Double.parseDouble(views.txtVentaProd.getText()));
                     pro.setId(Integer.parseInt(views.txtIdProd.getText()));
                     if (proDao.modificar(pro)) {
-                        limpiarTable();
+                        // limpiarTable();
                         listarProductos();
                         limpiar();
                         JOptionPane.showMessageDialog(null, "Producto Modificado");
@@ -121,16 +121,13 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
             }
         } else if (e.getSource() == views.btnLimpiarProd) {
             limpiar();
-
-        } else if (e.getSource() == views.btnLimpiarProd) {
-            limpiar();
         } else if (e.getSource() == views.jMenuItemReingresarProd) {
             if (views.txtIdProd.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "Selecciona una fila");
             } else {
                 int id = Integer.parseInt(views.txtIdProd.getText());
                 if (proDao.accion("Activo", id)) {
-                    limpiarTable();
+                    // limpiarTable();
                     listarProductos();
                     limpiar();
                     JOptionPane.showMessageDialog(null, "Producto reingresado");
@@ -144,7 +141,7 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
             } else {
                 int id = Integer.parseInt(views.txtIdProd.getText());
                 if (proDao.accion("Inactivo", id)) {
-                    limpiarTable();
+                    // limpiarTable();
                     listarProductos();
                     limpiar();
                     JOptionPane.showMessageDialog(null, "Producto eliminado");
@@ -159,6 +156,8 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
 
     public void listarProductos() {
         
+        limpiarTable();
+
         List<Productos> lista = proDao.ListaProductos(views.txtBuscarProd.getText());
         modelo = (DefaultTableModel) views.jTableProd.getModel();
         Object[] ob = new Object[7];
@@ -203,7 +202,7 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
 
         } else if (e.getSource() == views.jLabelProductos || (e.getSource() == views.jTabbedPane1 && views.jTabbedPane1.getSelectedIndex() == 2)) {
             views.jTabbedPane1.setSelectedIndex(2);
-            limpiarTable();
+            // limpiarTable();
             listarProductos();
         } else if (e.getSource() == views.jLabelFacturas) {
             views.jTabbedPane1.setSelectedIndex(3);
@@ -297,7 +296,7 @@ public class ProductosControllers implements ActionListener, MouseListener, KeyL
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getSource() == views.txtBuscarProd) {
-            limpiarTable();
+            // limpiarTable();
             listarProductos();
         } else if (e.getSource() == views.txtCantNV) {
             int cantidad;
