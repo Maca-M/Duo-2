@@ -98,8 +98,8 @@ public class Print extends javax.swing.JFrame implements Printable {
             ob[1] = lista.get(i).getNombre();
             ob[2] = lista.get(i).getDescripcion();
             ob[3] = lista.get(i).getCantidad();
-            ob[4] = lista.get(i).getPrecio_venta();
-            ob[5] = subtotal(lista.get(i).getPrecio_venta(),lista.get(i).getCantidad());
+            ob[4] = lista.get(i).getPrecioVenta();
+            ob[5] = subtotal(lista.get(i).getPrecioVenta(),lista.get(i).getCantidad());
             modelo.addRow(ob);
         }
         
@@ -121,8 +121,8 @@ public class Print extends javax.swing.JFrame implements Printable {
             ob[1] = lista.get(i).getNombre();
             ob[2] = lista.get(i).getDescripcion();
             ob[3] = lista.get(i).getCantidad();
-            ob[4] = lista.get(i).getPrecio_venta();
-            ob[5] = subtotal(lista.get(i).getPrecio_venta(),lista.get(i).getCantidad());
+            ob[4] = lista.get(i).getPrecioVenta();
+            ob[5] = subtotal(lista.get(i).getPrecioVenta(),lista.get(i).getCantidad());
             modelo.addRow(ob);
         }
         jTableFact1.setModel(modelo);
@@ -194,12 +194,12 @@ public class Print extends javax.swing.JFrame implements Printable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         PanelPrint = new javax.swing.JButton();
         Print = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableFact = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
@@ -218,6 +218,7 @@ public class Print extends javax.swing.JFrame implements Printable {
         txtNumFact = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         txtTotalFact = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -277,10 +278,7 @@ public class Print extends javax.swing.JFrame implements Printable {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setText("Original");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
-
-        jLabel10.setText("Total a Pagar:");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 50, 20));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
@@ -440,23 +438,29 @@ public class Print extends javax.swing.JFrame implements Printable {
         txtTotalFact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTotalFact.setText("jLabel11");
 
+        jLabel10.setText("Total a Pagar:");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGap(0, 93, Short.MAX_VALUE)
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtTotalFact, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtTotalFact)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTotalFact)
+                    .addComponent(jLabel10))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 190, 29));
+        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 440, 190, 29));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -509,7 +513,7 @@ public class Print extends javax.swing.JFrame implements Printable {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel33.setText("Duplicado");
-        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 60, 20));
 
         jTableFact1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTableFact1.setModel(new javax.swing.table.DefaultTableModel(
@@ -685,7 +689,7 @@ public class Print extends javax.swing.JFrame implements Printable {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 190, 29));
+        jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 440, 190, 29));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -734,7 +738,9 @@ public class Print extends javax.swing.JFrame implements Printable {
 
         jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 970));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 1110));
+        jScrollPane1.setViewportView(jPanel1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -801,6 +807,7 @@ public class Print extends javax.swing.JFrame implements Printable {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     public javax.swing.JTable jTableFact;

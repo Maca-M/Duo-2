@@ -3,6 +3,7 @@ package Models;
 
 
 public class Clientes {
+
     private int id;
     private String nombre;
     private String apellido;
@@ -10,17 +11,17 @@ public class Clientes {
     private String direccion;
     private String estado;
     
-    public Clientes(){
-        
-    }
+    public Clientes() {}
 
     public Clientes(int id, String nombre, String apellido, String telefono, String direccion, String estado) {
+        
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
         this.estado = estado;
+        
     }
 
     public int getId() {

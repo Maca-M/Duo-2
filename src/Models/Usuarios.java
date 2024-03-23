@@ -3,6 +3,7 @@ package Models;
 
 
 public class Usuarios {
+
     private int id;
     private String usuario;
     private String nombre;
@@ -11,11 +12,10 @@ public class Usuarios {
     private String rol;
     private String estado;
     
-    public Usuarios(){
-        
-    }
+    public Usuarios() {}
 
     public Usuarios(int id, String usuario, String nombre, String clave, String caja, String rol, String estado) {
+        
         this.id = id;
         this.usuario = usuario;
         this.nombre = nombre;
@@ -23,6 +23,7 @@ public class Usuarios {
         this.caja = caja;
         this.rol = rol;
         this.estado = estado;
+        
     }
 
     public int getId() {

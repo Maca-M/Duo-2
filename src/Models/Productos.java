@@ -2,26 +2,29 @@
 package Models;
 
 public class Productos {
+
     private int id;
     private String articulo;
     private String nombre;
     private String descripcion;
     private int cantidad;
-    private double precio_compra;
-    private double precio_venta;
+    private double precioCompra;
+    private double precioVenta;
     private String estado;
 
     public Productos() {
     }
 
-    public Productos(int id, String articulo,String nombre, String descripcion, double precio_compra, double precio_venta, String estado) {
+    public Productos(int id, String articulo,String nombre, String descripcion, double precioCompra, double precioVenta, String estado) {
+        
         this.id = id;
         this.articulo = articulo;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.precio_compra = precio_compra;
-        this.precio_venta = precio_venta;
+        this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
         this.estado = estado;
+
     }
 
     public int getId() {
@@ -63,20 +66,20 @@ public class Productos {
         this.cantidad = cantidad;
     }
 
-    public double getPrecio_compra() {
-        return precio_compra;
+    public double getPrecioCompra() {
+        return precioCompra;
     }
 
-    public void setPrecio_compra(double precio_compra) {
-        this.precio_compra = precio_compra;
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
     }
 
-    public double getPrecio_venta() {
-        return precio_venta;
+    public double getPrecioVenta() {
+        return precioVenta;
     }
 
-    public void setPrecio_venta(double precio_venta) {
-        this.precio_venta = precio_venta;
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
     }
 
     public String getEstado() {
