@@ -1,13 +1,17 @@
 package Models;
 
 public class Combo {
+
     private int id;
     private String nombre;
 
     public Combo(int id, String nombre) {
+
         this.id = id;
         this.nombre = nombre;
+
     }
+
     public int getId() {
         return id;
     }
@@ -28,4 +32,5 @@ public class Combo {
     public String toString(){
         return this.getNombre();
     }
+    
 }

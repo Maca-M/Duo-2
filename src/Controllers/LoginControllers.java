@@ -11,11 +11,13 @@ import javax.swing.JOptionPane;
 
 
 public class LoginControllers implements ActionListener{
+
     private Usuarios us;
     private UsuarioDao usDao;
     private FrmLogin views;
 
     public LoginControllers(Usuarios us, UsuarioDao usDao, FrmLogin views) {
+
         this.us = us;
         this.usDao = usDao;
         this.views = views;
@@ -27,28 +29,46 @@ public class LoginControllers implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         if(e.getSource() == views.btnLogin){
+
             if(views.txtUsuario.getText().equals("") 
                 || String.valueOf(views.txtClave.getPassword()).equals("")){
+
                 JOptionPane.showMessageDialog(null, "Los campos estan vacios");
+
             } else {
+
                 String usuario = views.txtUsuario.getText();
                 String clave = String.valueOf(views.txtClave.getPassword());
                 us = usDao.login(usuario, clave);
+
                 if(us.getUsuario() != null){
+
                     PanelAdmin admin = new PanelAdmin();
                     admin.setVisible(true);
                     this.views.dispose();
+
                 }else{
+
                     JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecta");
+
                 }
+
             }
+
         }else{
+
             int pregunta = JOptionPane.showConfirmDialog(null, "Estas Seguro que deseas Salir", "Pregunta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            
             if (pregunta == 0){
+
                 System.exit(0);
+
             }
+
         }
+
     }
     
 }

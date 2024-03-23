@@ -324,6 +324,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane4.setBackground(new java.awt.Color(255, 255, 255));
+
         jTableNV.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         jTableNV.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -341,6 +343,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableNV.setOpaque(false);
         jScrollPane4.setViewportView(jTableNV);
         if (jTableNV.getColumnModel().getColumnCount() > 0) {
             jTableNV.getColumnModel().getColumn(0).setMaxWidth(25);
@@ -384,11 +387,11 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         btnGenerarNV.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 12)); // NOI18N
         btnGenerarNV.setText("Generar Venta");
-        // btnGenerarNV.addActionListener(new java.awt.event.ActionListener() {
-        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
-        //         btnGenerarNVActionPerformed(evt);
-        //     }
-        // });
+        btnGenerarNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarNVActionPerformed(evt);
+            }
+        });
         jPanel6.add(btnGenerarNV, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 510, -1, -1));
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
@@ -429,18 +432,22 @@ public class PanelAdmin extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Articulo", "Nombre", "Cantidad"
+                "Articulo", "Nombre", "Cantidad"
             }
         ));
         jScrollPane1.setViewportView(jTableCont);
         if (jTableCont.getColumnModel().getColumnCount() > 0) {
-            jTableCont.getColumnModel().getColumn(0).setMaxWidth(30);
-            jTableCont.getColumnModel().getColumn(1).setMaxWidth(80);
+            jTableCont.getColumnModel().getColumn(0).setMaxWidth(80);
         }
 
         jPanel7.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 710, 490));
 
         btnCont.setText("Generar Lista");
+        btnCont.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnContActionPerformed(evt);
+            }
+        });
         jPanel7.add(btnCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 530, -1, -1));
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Diseño sin título.jpg"))); // NOI18N
@@ -548,6 +555,17 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnContActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContActionPerformed
+        
+        Contador contador = new Contador();
+        contador.setVisible(true);
+        
+    }//GEN-LAST:event_btnContActionPerformed
+
+    private void btnGenerarNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContActionPerformed
+  
+    }//GEN-LAST:event_btnContActionPerformed
 
     /**
      * @param args the command line arguments
